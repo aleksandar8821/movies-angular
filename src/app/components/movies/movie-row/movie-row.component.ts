@@ -8,8 +8,15 @@ import { Movie } from '../../../shared/models/movie';
 })
 export class MovieRowComponent implements OnInit {
 
-	@Input()
-	movieRow: Movie;
+	// @Input()
+	// movieRow: Movie;
+
+  private movie: Movie;
+
+  @Input()
+  set movieRow(movie: Movie){
+    this.movie = movie;
+  }
 
   constructor() { }
 

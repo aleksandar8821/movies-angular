@@ -9,6 +9,7 @@ import { MovieRowComponent } from '../../components/movies/movie-row/movie-row.c
     CommonModule
   ],
   providers: [MovieService],
-  declarations: [MovieRowComponent]
+  declarations: [MovieRowComponent],
+  exports: [MovieRowComponent]
 })
 export class SharedModule { }
