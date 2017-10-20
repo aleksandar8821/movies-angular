@@ -4,9 +4,9 @@ export class Movie {
 		public name?: string,
 		public director?: string,
 		public imageUrl?: string,
-		public duration?: number,
+		public duration?: string,
 		public releaseDate?: string,
-		public genres?: Array<string>
+		public genres?: string
 	){}
 	
 

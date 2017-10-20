@@ -7,6 +7,8 @@ import { SharedModule } from './shared/shared/shared.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { MovieService } from './shared/services/movie.service';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { MoviesComponent } from './components/movies/movies.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ MovieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

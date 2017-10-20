@@ -6,7 +6,7 @@ import { Movie } from '../models/movie';
 @Injectable()
 export class MovieService {
 
-	private movies:Array<Movie>;
+	private movies: Movie[] = [];
 
   constructor() { }
 
