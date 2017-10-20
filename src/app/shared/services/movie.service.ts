@@ -18,4 +18,11 @@ export class MovieService {
 
   }
 
+  public search(term){
+  	return this.movies.find( movie => {
+      return movie['name'] == term;
+    })
+
+  }
+
 }
