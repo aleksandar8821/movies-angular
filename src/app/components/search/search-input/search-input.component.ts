@@ -17,7 +17,7 @@ export class SearchInputComponent implements OnInit {
   }
 
   searchMovies(searchTerm: string){
-  	console.log(searchTerm);
+  	
   	this.router.navigate(['search/' + searchTerm]);
   }
 
