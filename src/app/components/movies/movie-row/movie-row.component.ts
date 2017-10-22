@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { Movie } from '../../../shared/models/movie';
 
 @Component({
@@ -12,20 +12,26 @@ export class MovieRowComponent implements OnInit {
 	// movieRow: Movie;
 
   private movie: Movie;
+  private selected: boolean;
 
   @Input()
   set movieRow(movie: Movie){
     this.movie = movie;
   }
 
-  constructor() { }
+  @Output() selectedOutput = new EventEmitter();
+
+  constructor() { 
+      this.selected = false;
+
+   }
 
   ngOnInit() {
   }
 
-  /*$ git add .
-	warning: LF will be replaced by CRLF in src/app/components/movies/movie-row/movie-row.component.spec.ts.
-	The file will have its original line endings in your working directory.
-*/
+  selectMovie(movie){
+    this.selectedOutput.emit(movie);
+    this.selected = true;
+  }
 
 }

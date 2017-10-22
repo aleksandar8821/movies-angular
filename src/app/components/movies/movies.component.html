@@ -1,6 +1,6 @@
+<p *ngIf = "selectedMoviesNumber">Number of selected movies: {{selectedMoviesNumber}}</p>
 
-
-<ul *ngFor = "let movie of movies" [movieRow] = "movie">
+<ul *ngFor = "let movie of movies" [movieRow] = "movie" (selectedOutput) = "addSelectedMovie(movie)">
 	
 
 </ul>

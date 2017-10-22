@@ -5,3 +5,4 @@
 <li><strong>duration:</strong> {{movie.duration}}</li>
 <li><strong>releaseDate:</strong> {{movie.releaseDate}}</li>
 <li><strong>genres:</strong> {{movie.genres}}</li>
+<button [disabled]="selected" class="btn btn-primary" (click) = "selectMovie(movie)">Select</button>

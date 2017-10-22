@@ -9,7 +9,10 @@ import { Movie } from '../../shared/models/movie';
 })
 export class MoviesComponent implements OnInit {
 
-	movies: Movie[] = [];
+  movies: Movie[] = [];
+  selectedMovies: Movie[] = [];
+	selectedMoviesNumber: number;
+
 
   constructor(private movieService: MovieService) { }
 
@@ -25,6 +28,9 @@ export class MoviesComponent implements OnInit {
   	)
   }
 
-  
+  public addSelectedMovie(movie){
+    this.selectedMovies.push(movie);
+    this.selectedMoviesNumber = this.selectedMovies.length;
+  }
 
 }
