@@ -27,7 +27,7 @@ export class SearchPageComponent implements OnInit {
 
   	// console.log(this.movie);
 
-  	this.route.params.subscribe(params => {
+  	/*this.route.params.subscribe(params => {
       this.term = params['term'];
       this.movieService.search(params['term'])
         .subscribe(
@@ -38,13 +38,13 @@ export class SearchPageComponent implements OnInit {
              alert('There are no movies with searched term: ' + params['term']);
              this.router.navigate(['movies']);
            }
-        }//, (term) => {
+        }*///, (term) => {
         //   alert('There are no movies with searched term: ' + term);
 
         //   this.router.navigate(['movies']);
         // }
-        );
-    });
+        /*);
+    });*/
   }
 
 }
