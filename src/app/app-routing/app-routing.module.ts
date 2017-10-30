@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MoviesComponent } from '../components/movies/movies.component';
-
 import { SearchPageComponent } from '../components/search/search-page/search-page.component';
+import { AddMovieComponent } from '../components/movies/add-movie/add-movie.component';
 
 
 const appRoutes: Routes = [
@@ -23,6 +23,10 @@ const appRoutes: Routes = [
     component: SearchPageComponent
     
   },
+  {
+    path: 'movies/add',
+    component: AddMovieComponent
+  }
   
 ];
 

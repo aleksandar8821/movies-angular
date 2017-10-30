@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { AddMovieComponent } from './components/movies/add-movie/add-movie.component';
 
 
 
@@ -18,6 +19,7 @@ import { MoviesComponent } from './components/movies/movies.component';
     AppComponent,
     LayoutComponent,
     MoviesComponent,
+    AddMovieComponent,
     
   ],
   imports: [

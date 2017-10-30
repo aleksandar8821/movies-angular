@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import { Movie } from '../models/movie';
 import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class MovieService {
@@ -26,12 +27,41 @@ export class MovieService {
 
             o.next(this.movies);
             return o.complete();
+
           }
         );
     });
 
 
 
+  }
+
+  public addMovie(newMovie: Movie){
+    console.log(newMovie);
+    return new Observable((o: Observer<any>) => {
+      this.http.post('http://localhost:8000/api/movies', {
+        'name': newMovie.name,
+        'director': newMovie.director,
+        'imageUrl': newMovie.imageUrl,
+        'duration': newMovie.duration,
+        'releaseDate': newMovie.releaseDate,
+        'genres': newMovie.genres
+        
+      })
+        .subscribe(
+          (m: any) => {
+            let newM = new Movie(m.id, m.name, m.director, m.image_url, m.duration, m.release_date, m.genres);
+            this.movies.push(newM);
+            o.next(this.movies);
+            return o.complete();
+          },
+          
+          (err: HttpErrorResponse)=>{
+            alert(`Backend returned code ${err.status} with message: ${err.error}`);
+          }
+
+        );
+    });
   }
 
   public search(term){
